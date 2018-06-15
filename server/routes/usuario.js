@@ -99,7 +99,7 @@ app.get('/usuario', verificaToken ,(req, res) => {
 
       Usuario.findByIdAndUpdate(id, cambiaEstado, {new: true}, verificaToken ,(err, usuarioB) => {
         if(err){
-            return res.status(400).json({
+            return res.status(500).json({
                 ok: false,
                 err
             });

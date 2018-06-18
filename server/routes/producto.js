@@ -22,8 +22,7 @@ app.get('/producto', (req, res) => {
     Producto.find({ disponible: true})
             .skip(desde)
             .limit(limite)
-            .populate('usuario', 'nombre email')
-            .populate('categoria', 'descripcion')
+            .populate('usuarios', 'nombre email')
             .exec((err, productos) =>{
                 if(err){
                     return res.status(400).json({
